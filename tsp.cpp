@@ -72,7 +72,6 @@ void tsp()
             }
             continue;
         }
-
         for (int i = 0; i < N; i++)
         {
             if (find(path.begin(), path.end(), i) == path.end())
@@ -81,7 +80,6 @@ void tsp()
                 childPath.push_back(i);
                 int childCost = currentCost + dist[path.back()][i];
                 int childBound = calculateBound(childPath, childCost);
-
                 if (childBound < bestCost)
                 {
                     s.push({childPath, childCost});
@@ -89,7 +87,6 @@ void tsp()
             }
         }
     }
-
     cout << "Optimal Path: ";
     for (int city : bestPath)
     {
